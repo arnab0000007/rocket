@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
+import { Container, Row } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { setRockets } from '../../redux/rockets';
+import Rocket from '../Rocket/Rocket';
 
 function Rockets() {
-  const { rockets } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   const fetchRockets = async () => {
     const response = await axios
@@ -19,9 +20,13 @@ function Rockets() {
   }, []);
 
   return (
-    <div>
-      <h1>{rockets.length}</h1>
-    </div>
+    <>
+      <Container>
+        <Row className="g-3">
+          <Rocket />
+        </Row>
+      </Container>
+    </>
   );
 }
 

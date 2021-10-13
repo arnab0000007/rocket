@@ -21,5 +21,6 @@ module.exports = {
     'linebreak-style': 0,
     'no-param-reassign': 0,
     'eslint-linebreak-style': [0, 'error', 'windows'],
+    'arrow-body-style': 0,
   },
 };
