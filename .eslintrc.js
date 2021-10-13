@@ -18,5 +18,8 @@ module.exports = {
     'react',
   ],
   rules: {
+    'linebreak-style': 0,
+    'no-param-reassign': 0,
+    'eslint-linebreak-style': [0, 'error', 'windows'],
   },
 };
