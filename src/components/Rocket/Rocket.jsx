@@ -24,14 +24,14 @@ function Rockets() {
               </span>
             </Card.Title>
             <Card.Text>
-              <h5>
+              <span>
                 Launch Status:
                 { rocket?.launch_failure_details?.time ? ' failed' : ' success' }
-              </h5>
-              <h5>
+              </span>
+              <span>
                 Launch Year:
                 { launchYear }
-              </h5>
+              </span>
             </Card.Text>
           </Card.Body>
           <ListGroup className="list-group-flush pt-0">
