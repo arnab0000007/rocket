@@ -5,6 +5,7 @@ const initialState = {
   filteredRockets: [],
   launchStatus: '',
   isUpcoming: '',
+  launchDate: '',
 };
 export const rocketsSlice = createSlice({
   name: 'rockets',
@@ -31,9 +32,16 @@ export const rocketsSlice = createSlice({
         filteredRockets: action.payload.payload.items,
       };
     },
-    setFilterdRocketsName: (state, action) => {
+    setFilterdRocketsByName: (state, action) => {
       return {
         ...state,
+        filteredRockets: action.payload.payload.items,
+      };
+    },
+    setFilterdRocketsByDate: (state, action) => {
+      return {
+        ...state,
+        launchDate: action.payload.payload.date,
         filteredRockets: action.payload.payload.items,
       };
     },
@@ -45,7 +53,8 @@ export const {
   setRockets,
   setFilterdRocketsByLaunchStatus,
   setFilterdRocketsByUpcoming,
-  setFilterdRocketsName,
+  setFilterdRocketsByName,
+  setFilterdRocketsByDate,
 } = rocketsSlice.actions;
 
 export default rocketsSlice.reducer;

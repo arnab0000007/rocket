@@ -7,6 +7,7 @@ import {
   filterRocketsByLaunchStatus,
   filterRocketsByUpcoming,
   filterRocketsByName,
+  filterRocketsByDate,
 } from '../../redux/rocketActions';
 
 function Filter() {
@@ -15,6 +16,7 @@ function Filter() {
     launchStatus,
     filteredRockets,
     isUpcoming,
+    launchDate,
   } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
 
@@ -70,6 +72,25 @@ function Filter() {
               >
                 <option value="true">Yes</option>
                 <option value="false">No</option>
+              </select>
+            </Col>
+            <Col xs={6} md={4}>
+              <h6>
+                Launch Date
+              </h6>
+              <select
+                className="form-control"
+                value={launchDate}
+                onChange={(event) => {
+                  dispatch(filterRocketsByDate(
+                    rockets,
+                    event.target.value,
+                  ));
+                }}
+              >
+                <option value="week">Last Week</option>
+                <option value="month">Last Month</option>
+                <option value="year">Last Year</option>
               </select>
             </Col>
           </Row>
