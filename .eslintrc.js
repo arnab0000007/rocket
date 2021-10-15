@@ -22,5 +22,6 @@ module.exports = {
     'no-param-reassign': 0,
     'eslint-linebreak-style': [0, 'error', 'windows'],
     'arrow-body-style': 0,
+    'no-console': 0,
   },
 };

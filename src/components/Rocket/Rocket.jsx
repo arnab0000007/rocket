@@ -5,21 +5,28 @@ import {
 import { useSelector } from 'react-redux';
 
 function Rockets() {
-  const { rockets } = useSelector((state) => state.rockets);
-  const renderRockets = rockets.map((rocket) => {
+  const { filteredRockets } = useSelector((state) => state.rockets);
+  const renderRockets = filteredRockets.map((rocket) => {
     return (
-      <Col xs={6} md={4} key={rocket.launch_date_unix}>
-        <Card className="mt-3 p-3 card h-100 text-center shadow-lg rounded">
+      <Col xs={6} md={4} key={rocket.mission_name}>
+        <Card className="my-3 p-3 card text-center shadow-lg rounded">
           <Card.Img style={{ width: '220px' }} className="img rounded mx-auto d-block" src={rocket.links.mission_patch_small} />
           <Card.Body>
             <Card.Title>
-              Mission:
+              Mission Name:
               <span className="text-primary">
                 { rocket.mission_name }
               </span>
             </Card.Title>
             <Card.Text>
-              { rocket.length }
+              <h4>
+                Rocket Name:
+                {rocket.rocket.rocket_name}
+              </h4>
+              <h5>
+                Lauch Status:
+                { rocket?.launch_failure_details?.time ? ' failed' : ' success' }
+              </h5>
             </Card.Text>
           </Card.Body>
           <ListGroup className="list-group-flush">
