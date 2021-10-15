@@ -96,9 +96,9 @@ function Filter() {
           </Row>
         </Col>
         <Col xs={6} md={4}>
-          <h3>
-            Total rockets found:
-            <span className="text-danger">{ filteredRockets.length }</span>
+          <h3 className="text-center">
+            Rockets found:
+            <span className="text-danger ps-3">{ filteredRockets.length }</span>
           </h3>
         </Col>
       </Row>

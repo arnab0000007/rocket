@@ -85,10 +85,4 @@ export const filterRocketsByDate = (rockets, date) => (dispatch) => {
     },
   }));
 };
-// x.launch_success.indexOf(launchStatus.toLowerCase()) >= 0
-// launchStatus === ''
-// ? rockets
-// : rockets.filter(
-//   (x) => x?.launch_success === launchStatus,
-// ),
 export default fetchRockets;

@@ -48,7 +48,6 @@ export const rocketsSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const {
   setRockets,
   setFilterdRocketsByLaunchStatus,
